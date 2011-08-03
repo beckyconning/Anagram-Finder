@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  color: false
+  value: MyString
+  dictionary_id: 1
+
+two:
+  color: false
+  value: MyString
+  dictionary_id: 1
