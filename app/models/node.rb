@@ -8,8 +8,7 @@ class Node < ActiveRecord::Base
   
   def split_by_prefix(prefix, remaining_string)
     if (prefix != nil)
-      split_node = self.dup
-      split_node[:id] = nil
+      split_node = Node.new(:key => self.key, :color => self.color)
       self[:key] = prefix
       if (prefix == remaining_string) then
         self[:color] = true
