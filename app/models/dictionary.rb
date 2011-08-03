@@ -28,7 +28,7 @@ class Dictionary < ActiveRecord::Base
     	self.insert(line.gsub(/\n/,""))
     end
     file.close
-    puts Time.now - start_time
+    return Time.now - start_time
   end
 
   def contains_word(word)
