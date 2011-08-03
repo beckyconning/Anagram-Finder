@@ -49,6 +49,7 @@ class Dictionary < ActiveRecord::Base
       node = find_results.values.first
       remaining_string = string[found_string.length..-1]
       node.children.each { |child|
+        puts "searching for a child with a common prefix for " + remaining_string
         prefix = child.common_prefix_with(remaining_string)
         unless (prefix == nil || prefix.empty?)
           child.split_by_prefix(prefix, remaining_string)
@@ -65,6 +66,7 @@ class Dictionary < ActiveRecord::Base
   end
     
   def find(string) 
+    puts "searching for " + string
     node = self.root
     key = String.new
     found_string = String.new

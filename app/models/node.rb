@@ -7,6 +7,7 @@ class Node < ActiveRecord::Base
   has_many :parents, :through => :parent_connections, :source => :from_node
   
   def split_by_prefix(prefix, remaining_string)
+    puts "splitting " + self.key + " by " + prefix
     if (prefix != nil)
       split_node = Node.new(:key => self.key, :color => self.color)
       self[:key] = prefix
@@ -23,6 +24,7 @@ class Node < ActiveRecord::Base
   end
   
   def common_prefix_with(string)
+    puts "finding common prefix for " + self.key + " and " + string
     if (string != nil && self.key != nil) then
       prefix = String.new
       string.each_char.with_index { |character, index|
