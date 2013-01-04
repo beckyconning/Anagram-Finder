@@ -10,24 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110802215718) do
+ActiveRecord::Schema.define(:version => 20110805061139) do
 
-  create_table "connections", :force => true do |t|
-    t.integer  "to_node_id"
-    t.integer  "from_node_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "active_record_nodes", :force => true do |t|
+    t.boolean "is_leaf"
+    t.string  "key"
+    t.integer "left"
+    t.integer "right"
+    t.integer "depth"
+    t.integer "dictionary_id"
   end
 
   create_table "dictionaries", :force => true do |t|
-    t.integer  "root_node_id"
+  end
+
+  create_table "linear_dictionaries", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "nodes", :force => true do |t|
-    t.boolean  "color"
-    t.string   "key"
+  create_table "words", :force => true do |t|
+    t.string   "value"
+    t.integer  "linear_dictionary_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

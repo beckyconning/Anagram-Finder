@@ -1,0 +1,21 @@
+<div class="anagram_result">
+  <p>
+    <b><%= Time.now.to_s %></b><br />
+    <% if @dictionary_exists == true %>
+    <span class="anagram_result_information">
+      <%= @anagrams.count -%> anagrams for <%= @word -%> found in
+    </span>
+  </p>
+  <p>
+     <%= @anagrams.join(", ") %>
+  </p>
+  <% else %>
+    <span class="anagram_result_information">
+      Couldn't find any anagrams for <%= @word -%> in 
+    </span>
+  </p>
+  <p>
+    There is no loaded dictionary. Please select a dictionary file above and try again.
+  </p>
+  <% end %>
+</div>

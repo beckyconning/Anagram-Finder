@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  value: MyString
+  dictionary_id: 1
+
+two:
+  value: MyString
+  dictionary_id: 1

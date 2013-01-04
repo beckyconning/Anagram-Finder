@@ -1,0 +1,22 @@
+<div id="dictionary_upload">
+<p>
+  <%= form_for(:file_form, :url => dictionary_upload_path, :html => { :method => :post, :id => 'file_form', :multipart => true }) do |f| %>
+    Select a dictionary file:<br /> 
+    <%= f.file_field :file %><br />
+    <img src="images/loading.gif" id="dictionary_loading_image" style="display: none;" />
+    <span id="dictionary_information"></span>
+  <% end %>
+</p>
+</div>
+
+<div id="anagram_search" style="display: none;">
+<%= form_for(:anagram_form, :url => dictionary_anagrams_path, :html => { :method => :post, :id => 'anagram_form' }) do |f| %>
+  Enter a word to search for anagrams:<br /> 
+  <%= f.text_field :word, :id => "word" %><%= f.submit "Search" %><br />
+  <img src="images/loading.gif" id="anagram_loading_image" style = "display:none;" />
+<% end %>
+</div>
+
+<div id="anagram_results" style="display: none;">
+
+</div>
